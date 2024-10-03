@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Shortened Links{% endblock %}
+
+{% block content %}
+<div class="mt-5">
+    <h1>Shortened Links</h1>
+    <ul class="list-group">
+        {% for url in urls %}
+            <li class="list-group-item">
+                <a href="{{ url.original_url }}" target="_blank">{{ url.original_url }}</a> -
+                <a href="{{ url.short_url }}" target="_blank">{{ url.short_url }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
